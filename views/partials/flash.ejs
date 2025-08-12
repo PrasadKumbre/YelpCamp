@@ -1,0 +1,73 @@
+<!-- ====== FLASH MESSAGES (FLOATING CENTER-TOP, LARGE) ====== -->
+<!-- Bootstrap Icons (only include once in your layout if not already present) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<% if (success.length || error.length) { %>
+    <div class="flash-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1080;">
+        <% if (success.length) { %>
+            <div class="alert alert-success alert-dismissible fade show shadow-lg rounded-4 px-5 py-4 mb-3 float-alert text-center fs-5 fw-semibold"
+                id="successAlert" role="alert">
+                <i class="bi bi-check-circle-fill me-2 fs-4"></i>
+                <%= success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <div class="progress-bar-timer bg-success"></div>
+            </div>
+            <% } %>
+
+                <% if (error.length) { %>
+                    <div class="alert alert-danger alert-dismissible fade show shadow-lg rounded-4 px-5 py-4 mb-3 float-alert text-center fs-5 fw-semibold"
+                        id="errorAlert" role="alert">
+                        <i class="bi bi-exclamation-triangle-fill me-2 fs-4"></i>
+                        <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <div class="progress-bar-timer bg-danger"></div>
+                    </div>
+                    <% } %>
+    </div>
+    <% } %>
+
+        <!-- Inline CSS (or move to main stylesheet) -->
+        <style>
+            .float-alert {
+                min-width: 380px;
+                max-width: 600px;
+                position: relative;
+            }
+
+            .progress-bar-timer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 6px;
+                width: 100%;
+                animation: shrinkBar 10s linear forwards;
+                opacity: 0.85;
+                border-radius: 0 0 10px 10px;
+            }
+
+            @keyframes shrinkBar {
+                from {
+                    width: 100%;
+                }
+
+                to {
+                    width: 0%;
+                }
+            }
+        </style>
+
+        <!-- Auto Dismiss Script (10 seconds) -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const alerts = ['successAlert', 'errorAlert'];
+                alerts.forEach(id => {
+                    const alertElem = document.getElementById(id);
+                    if (alertElem) {
+                        setTimeout(() => {
+                            const bsAlert = bootstrap.Alert.getOrCreateInstance(alertElem);
+                            bsAlert.close();
+                        }, 10000); // 10 seconds
+                    }
+                });
+            });
+        </script>

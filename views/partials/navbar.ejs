@@ -1,0 +1,49 @@
+<style>
+    .navbar-nav .nav-link {
+        transition: all 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #20c997;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container-fluid">
+        <!-- Logo / Brand -->
+        <a class="navbar-brand fw-bold text-success d-flex align-items-center" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                class="bi bi-tree-fill me-2" viewBox="0 0 16 16">
+                <path
+                    d="M8 0c.256 0 .512.098.707.293l3 3a1 1 0 0 1-.707 1.707H9.586l2.354 2.354a1 1 0 0 1-1.414 1.414L8 6.414l-2.525 2.525a1 1 0 0 1-1.414-1.414L6.414 5H5a1 1 0 0 1-.707-1.707l3-3A1 1 0 0 1 8 0z" />
+                <path
+                    d="M7.5 8.914V13H6a.5.5 0 0 0 0 1h1.5v.5a.5.5 0 0 0 1 0V14H10a.5.5 0 0 0 0-1H8.5V8.914l1.793 1.793a.5.5 0 0 0 .707-.707l-2.5-2.5a.5.5 0 0 0-.707 0l-2.5 2.5a.5.5 0 0 0 .707.707L7.5 8.914z" />
+            </svg>
+            YelpCamp
+        </a>
+
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link px-3" href="/">Home</a>
+                <a class="nav-link px-3" href="/campgrounds">Campgrounds</a>
+                <a class="nav-link px-3" href="/campgrounds/new">New Campground</a>
+                <% if(!currentUser) {%>
+                    <a class="nav-link px-3" href="/login">Login</a>
+                    <a class="nav-link px-3" href="/register">Register</a>
+                    <% } else { %>
+                        <a class="nav-link px-3 text-danger" href="/logout">Logout</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

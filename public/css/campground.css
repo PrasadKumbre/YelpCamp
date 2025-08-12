@@ -1,0 +1,51 @@
+   .section-title {
+       font-size: 2rem;
+       font-weight: bold;
+       color: #198754;
+   }
+
+   .carousel-inner img {
+       border-radius: 12px;
+       height: 450px;
+       object-fit: cover;
+   }
+
+   .info-box {
+       border-radius: 12px;
+       background-color: #f8f9fa;
+   }
+
+   .list-group-item b {
+       color: #198754;
+   }
+
+   .review-card {
+       transition: all 0.2s ease;
+   }
+
+   .review-card:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+   }
+
+   .nav-tabs .nav-link.active {
+       background-color: #d1e7dd;
+       color: #0f5132;
+       font-weight: bold;
+   }
+
+   .btn-outline-success:hover,
+   .btn-outline-danger:hover {
+       opacity: 0.9;
+   }
+
+   .starability-result::before {
+       font-size: 1.3rem;
+   }
+
+   #map {
+       height: 400px;
+       width: 100%;
+       border-radius: 12px;
+       overflow: hidden;
+   }

@@ -1,0 +1,83 @@
+<% layout('./layouts/boilerplate') %>
+    <title>YelpCamp | Explore Campgrounds</title>
+<style>
+    #map {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#map:hover {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+    transform: scale(1.01);
+}
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+</style>
+    <!-- Map Section -->
+<!-- Stylish Map Section -->
+<div class="container">
+    <div class="mb-3 text-center">
+        <h2 class="fw-bold">Campgrounds Map 🗺️</h2>
+        <p class="text-muted">Browse all locations across the country</p>
+    </div>
+    <div id="map" class="rounded-4 shadow border border-primary"
+        style="width: 100%; height: 450px; background: linear-gradient(135deg, #e0f7fa, #f0f0f0);"></div>
+</div>
+
+    <!-- Page Title -->
+    <div class="container mb-4 text-center my-5">
+        <h1 class="display-5 fw-bold">Explore Campgrounds 🏕️</h1>
+        <p class="text-muted">Discover your next adventure</p>
+    </div>
+
+    <!-- Campgrounds List -->
+    <div class="container">
+        <% for (let campground of campgrounds) { %>
+            <div class="card mb-4 border border-secondary rounded-4 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img crossorigin="anonymous" src="<%= campground.images[0].url %>" alt="<%= campground.title %> image"
+                            class="img-fluid h-100 rounded-start" style="object-fit: cover;">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title fw-semibold">
+                                <%= campground.title %>
+                            </h4>
+                            <p class="card-text text-muted mb-2">
+                                <%= campground.description.length> 100 ? campground.description.substring(0, 100) +
+                                    '...' : campground.description %>
+                            </p>
+
+                            <div class="mb-2">
+                                <span class="badge bg-light text-dark">
+                                    📍 <%= campground.location %>
+                                </span>
+                            </div>
+
+                            <div class="mb-3">
+                                <span class="fw-bold fs-5 text-success">
+                                    ₹<%= campground.price %>
+                                </span>
+                            </div>
+
+                            <a href="/campgrounds/<%= campground._id %>"
+                                class="btn btn-warning btn-sm rounded-pill px-4">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+
+    <!-- Map and Cluster Script -->
+    <script>
+        const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
+        const campgrounds = { features: <%- JSON.stringify(campgrounds) %> };
+    </script>
+
+    <script src="/js/clusterMap.js"></script>

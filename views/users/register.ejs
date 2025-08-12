@@ -1,0 +1,47 @@
+<% layout('./layouts/boilerplate') %>
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded">
+                <div class="card-body p-4">
+                    <h3 class="mb-4 text-center text-success fw-bold">Create an Account</h3>
+
+                    <form action="/register" method="POST" class="validated-form" novalidate>
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="user[username]"
+                                placeholder="Enter username" required />
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="user[email]" placeholder="Enter email"
+                                required />
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="user[password]"
+                                placeholder="Enter password" required />
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                Register
+                            </button>
+                        </div>
+                    </form>
+
+                    <p class="mt-3 text-center small">
+                        Already have an account?
+                        <a href="/login" class="text-decoration-none text-success fw-semibold">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
