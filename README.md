@@ -78,9 +78,9 @@ It’s built with **Node.js, Express, MongoDB, and EJS**, with additional integr
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/yelpcamp.git
+   git https://github.com/PrasadKumbre/YelpCamp.git
    cd yelpcamp
-````
+   ```
 
 2. **Install dependencies**
 
@@ -137,3 +137,16 @@ yelpcamp/
 * Validated form inputs with `joi`.
 
 ---
+
+## 📜 License
+
+This project is licensed under the [ISC License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Prasad Kumbre**
+[GitHub](https://github.com/PrasadKumbre) | [LinkedIn](https://in.linkedin.com/in/prasad-kumbre-367372229)
+
+```
