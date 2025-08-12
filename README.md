@@ -138,12 +138,6 @@ yelpcamp/
 
 ---
 
-## 📜 License
-
-This project is licensed under the [ISC License](LICENSE).
-
----
-
 ## 👨‍💻 Author
 
 Developed by **Prasad Kumbre**
