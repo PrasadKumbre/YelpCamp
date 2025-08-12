@@ -152,12 +152,13 @@ Developed by **Prasad Kumbre**
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/3af8a7b1-2a95-4762-8757-e35908a49d52" />)
+<img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/3af8a7b1-2a95-4762-8757-e35908a49d52" />
 
 ### Campground Details Page
-![Campground Details](<img width="1738" height="1175" alt="image" src="https://github.com/user-attachments/assets/33738c30-cf54-4664-ad12-0596f0ec8093" />
-)
+<img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/4df7a447-fbde-4892-9321-23aadc14b9bb" />
 
 ### Add New Campground
-![Add Campground](<img width="600" height="500" alt="image" src="https://github.com/user-attachments/assets/dcf1b53a-488f-43f8-bb64-5df95df0eaff" />
-)
+<img width="1200" height="600" alt="image" src="https://github.com/user-attachments/assets/dcf1b53a-488f-43f8-bb64-5df95df0eaff" />
+
+### Campground List Page
+<img width="1738" height="2706" alt="image" src="https://github.com/user-attachments/assets/d6325636-6ad3-4bdc-a1af-5748fbb0084c" />
